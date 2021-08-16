@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url('normalize.css');
+@import url('colors.css');
+body {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    background: #424242 !important;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: auto;
+    grid-template-columns: 15% 80%;
+    grid-template-areas: 'left right';
+}
+input[type=checkbox] {
+    visibility: hidden;
+  }
+  .checkbox-div{
+    width: 45px;
+    height: 22px;
+    background: #555;
+    margin: 20px 10px;
+    position: relative;
+    border-radius: 5px;
+  }
+  .checkbox-div label {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -2px;
+    left: -3px;
+    background: #ccc;
+  }
+
+  .checkbox-div input[type=checkbox]:checked + label {
+    left: 27px;
+  }
+.alert{
+    position: absolute !important;
+    top:10px !important;
+    right:10px !important;
+}
