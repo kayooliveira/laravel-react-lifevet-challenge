@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AnimalRequest;
 use App\Models\Animal;
 use Illuminate\Http\Request;
 
@@ -25,6 +26,7 @@ class AnimalController extends Controller
     public function create()
     {
         //
+        return view('animals.create');
     }
 
     /**
@@ -33,9 +35,17 @@ class AnimalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AnimalRequest $request)
     {
         //
+        $data = $request->validated();
+        $animal = Animal::create($data);
+        if($animal){
+            return redirect()->route('animal.create')->with(['success' => 'Animal cadastrado com sucesso!']);
+        }else{
+            return redirect()->route('animal.create')->with(['error' => 'Não foi possível cadastrar o animal!']);
+        }
+
     }
 
     /**

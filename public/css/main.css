@@ -39,3 +39,8 @@ input[type=checkbox] {
   .checkbox-div input[type=checkbox]:checked + label {
     left: 27px;
   }
+.alert{
+    position: absolute !important;
+    top:10px !important;
+    right:10px !important;
+}

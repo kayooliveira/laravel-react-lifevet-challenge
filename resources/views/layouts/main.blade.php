@@ -11,6 +11,9 @@
     @stack('styles')
     {{-- SCRIPTS --}}
     @stack('scripts')
+    <script>
+        const csrf_token = '{{ csrf_token() }}';
+    </script>
 </head>
 <body>
     <div id="nav"></div>

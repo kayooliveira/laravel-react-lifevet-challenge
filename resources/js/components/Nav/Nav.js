@@ -62,7 +62,7 @@ const  Nav = () => {
             <Sidebar className="sidebar">
                 <SidebarBrand src={window.location.origin.toString()+"/img/teste.png"} alt="logo" title="Logo" className="sidebar-brand"/>
                 <SidebarList className="sidebar-list">
-                    <li className="sidebar-list-item"><SidebarListItemLink title="Início" className="sidebar-list-item-link" href={window.location.origin.toString()+"/request/all"}> Início  </SidebarListItemLink></li>
+                    <li className="sidebar-list-item"><SidebarListItemLink title="Início" className="sidebar-list-item-link" href={window.location.origin.toString()+"/request/all"}> Solicitações  </SidebarListItemLink></li>
                     <li className="sidebar-list-item"><SidebarListItemLink title="Cadastrar Animal" className="sidebar-list-item-link" href={window.location.origin.toString()+"/animal/add"}> Cadastrar animal </SidebarListItemLink></li>
                     <li className="sidebar-list-item"><SidebarListItemLink title="Cadastrar Solicitação" className="sidebar-list-item-link" href={window.location.origin.toString()+"/request/add"}> Cadastrar Solicitação </SidebarListItemLink></li>
                 </SidebarList>
@@ -77,7 +77,7 @@ const  Nav = () => {
 
 export default Nav;
 
-
-if (document.getElementById('nav')) {
-    ReactDOM.render(<Nav />, document.getElementById('nav'));
+const div = document.getElementById('nav');
+if (div) {
+    ReactDOM.render(<Nav />, div);
 }

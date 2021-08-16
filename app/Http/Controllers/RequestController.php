@@ -18,7 +18,23 @@ class RequestController extends Controller
     {
         //
         $requests = RequestModel::orderBy('created_at','DESC')->get();
-        return view('requests.index', compact('requests'));
+        $fullRequests = [];
+        foreach ($requests as $request) {
+            $requestData['id'] = $request->id;
+            $requestData['label'] = $request->label;
+            $requestData['animalId'] = $request->animal->id;
+            $requestData['animalName'] = $request->animal->name;
+            $requestData['animalSpecie'] = $request->animal->specie;
+            $requestData['animalBreed'] = $request->animal->breed;
+            $examData = [];
+            foreach (json_decode($request->exams) as $exam) {
+                $examsData = Exam::where('id',$exam)->get('label');
+                $examData[] = $examsData[0]->label;
+            }
+            $requestData['exams'] = $examData;
+            array_push($fullRequests,$requestData);
+        }
+        return view('requests.index', compact('fullRequests'));
     }
 
     /**
@@ -47,7 +63,11 @@ class RequestController extends Controller
         $data['animal_id'] = $data['animal'];
         $data['exams'] = json_encode($data['exams']);
         $CRequest = RequestModel::create($data);
-        return redirect()->route('request.create')->with(['success' => 'Solicitação cadastrada com sucesso!']);
+        if($CRequest){
+            return redirect()->route('request.create')->with(['success' => 'Solicitação cadastrada com sucesso!']);
+        }else{
+            return redirect()->route('request.create')->with(['error' => 'Não foi possível cadastrar a solicitação!']);
+        }
     }
 
     /**

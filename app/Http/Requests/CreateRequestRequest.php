@@ -34,8 +34,9 @@ class CreateRequestRequest extends FormRequest
 
     public function messages(){
         return [
-            'label.required' => 'O campo "descrição" é requerido!',
+            'label.required' => 'O campo Descrição é requerido!',
             'label.unique' => 'Já existe uma solicitação para este animal com estas informações',
+            'animal.exists' => 'O animal não existe no banco de dados!'
         ];
     }
 }

@@ -14,7 +14,9 @@ require('./bootstrap');
  */
 
 
-require('./components/Requests');
-require('./components/FormRequest');
-require('./components/Nav');
-require('./components/FormAnimal');
+require('./components/Nav/Nav');
+require('./components/Requests/Requests');
+require('./components/Forms/FormRequest');
+require('./components/Forms/FormAnimal');
+require('./components/Index/Index');
+

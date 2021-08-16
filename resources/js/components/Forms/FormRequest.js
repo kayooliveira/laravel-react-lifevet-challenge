@@ -1,65 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Form from './Form';
-import Input from './Input';
-import styled from 'styled-components';
-import Popup from 'reactjs-popup';
+import { Form, FormTitle, TextArea, Select, Input } from "../styled-components/form/Form"
+import {Right} from '../styled-components/divs/GridAreas';
 
-const FormTitle = styled.h1`
-    color:white;
-    font-size:50px;
-    font-weight:bold;
-    text-align:center;
-    text-transform: uppercase;
-`
-
-const Right = styled.div`
-grid-area:right;
-width:100%;
-text-align:center;
-height:100% !important;
-overflow:hidden;
-`
-
-const Select = styled.select`
-    background-color:transparent;
-    border: 0;
-    border-bottom: 1px solid #2b93ec;
-    color: #fff;
-    height:50px;
-
-    &:hover{
-        background-color:transparent;
-        border: 0;
-        border-bottom: 1px solid #2b93ec;
-        color: #fff;
-    }
-
-    &:focus{
-        background-color:transparent;
-        border: 0;
-        border-bottom: 1px solid #2b93ec;
-        color: #fff;
-
-    }
-    &>option{
-        color: black;
-    }
-`
-
-const TextArea = styled.textarea`
-    background:transparent !important;
-    border:0px !important;
-    border-bottom: 1px solid #2b93ec !important;
-    color:white !important;
-`
 const FormRequest = (props) => {
     return (
         <>
         <Right className="text-center row justify-content-center text-center text-white">
                 <FormTitle className="text-primary uppercase">nova Solicitação</FormTitle>
                     <Form action={document.location.origin.toString()+"/request/add"} method="POST" className="row col-md-u justify-content-center">
-                    <input type="hidden" name="_token" value={props.csrf_token} />
+                    <Input type="hidden" name="_token" value={props.token} />
                         <div className="col-sm-12 my-1">
                             <label className="sr-only" for="label">Descrição</label>
                             <div className="input-group">
@@ -114,7 +64,7 @@ const FormRequest = (props) => {
 }
 
 export default FormRequest;
-const form = document.getElementById('formRequest');
+const form = document.getElementById('formRequests');
 if (form) {
-    ReactDOM.render(<FormRequest csrf_token={csrf_token} exams={exams} animals={animals} />, form);
+    ReactDOM.render(<FormRequest  token={csrf_token} exams={exams} animals={animals} />, form);
 }
