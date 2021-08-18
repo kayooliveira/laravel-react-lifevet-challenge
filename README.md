@@ -3,6 +3,17 @@
 <p>Criado para cumprir o desafio proposto por <a href="https://github.com/sergiopallet">sergiopallet</a> em <a href="https://github.com/sergiopallet/code-challenge-lifevet">sergiopallet/code-challenge/lifevet</a>.</p>
 
 ## INSTALLATION
+
+<h3>Clone the repository with</h3>
+<code>git clone https://github.com/kayooliveira/laravel-react-lifevet-challenge.git</code>
+
+<hr>
+
+<h3>Go to the project folder with</h3>
+<code>cd laravel-react-lifevet-challenge</code>
+
+<hr>
+
 <h3>Install the dependencies with</h3>
 <code>composer install</code>
 
@@ -13,6 +24,11 @@
 <code>php artisan migrate</code>
 
 <span>keep in mind that it is necessary to have a created database named "vet"</span>
+
+<hr>
+
+<h3>Generate the project key with</h3>
+<code>php artisan key:generate</code>
 
 <hr>
 
