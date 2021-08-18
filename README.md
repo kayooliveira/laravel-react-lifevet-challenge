@@ -14,6 +14,11 @@
 
 <hr>
 
+<h3>Copy the .env.example file with</h3>
+<code>cp .env.example .env</code>
+
+<hr>
+
 <h3>Install the dependencies with</h3>
 <code>composer install</code>
 
