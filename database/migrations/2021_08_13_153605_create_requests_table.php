@@ -17,7 +17,7 @@ class CreateRequestsTable extends Migration
             $table->id();
             $table->string('label');
             $table->foreignId('animal_id');
-            $table->foreign('animal_id')->references('id')->on('animals');
+            $table->foreign('animal_id')->references('id')->on('animals')->onDelete('cascade');
             $table->json('exams');
             $table->timestamps();
         });

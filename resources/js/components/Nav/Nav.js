@@ -13,7 +13,7 @@ margin:0;
 grid-area:left;
 width:100%;
 text-align: center;
-background-color: #252525;
+background-color: #2b93ec ;
 min-height:100vh;
 height:100%;
 overflow:hidden;
@@ -34,8 +34,8 @@ width: 100%;
 margin: 10px 0 10px 0;
 padding:30px 0 30px 0;
 border-bottom: 1px solid;
-border-color:#2b93ec;
-color: white;
+border-color:#8bf7ea;
+color: #8bf7ea;
 
 &:hover{
     position: relative;
@@ -60,7 +60,7 @@ const  Nav = () => {
     return (
         <>
             <Sidebar className="sidebar">
-                <SidebarBrand src={window.location.origin.toString()+"/img/teste.png"} alt="logo" title="Logo" className="sidebar-brand"/>
+                <a href={window.location.origin.toString()+"/"}><SidebarBrand src={window.location.origin.toString()+"/img/teste.png"} alt="logo" title="Logo" className="sidebar-brand"/></a>
                 <SidebarList className="sidebar-list">
                     <li className="sidebar-list-item"><SidebarListItemLink title="Início" className="sidebar-list-item-link" href={window.location.origin.toString()+"/request/all"}> Solicitações  </SidebarListItemLink></li>
                     <li className="sidebar-list-item"><SidebarListItemLink title="Cadastrar Animal" className="sidebar-list-item-link" href={window.location.origin.toString()+"/animal/add"}> Cadastrar animal </SidebarListItemLink></li>

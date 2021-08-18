@@ -7,7 +7,7 @@ const FormAnimal = (props) => {
     return (
         <>
         <Right className="text-center row justify-content-center text-center text-white">
-                <FormTitle className="text-primary uppercase">Novo Animal</FormTitle>
+                <FormTitle className="text-primary uppercase">Cadastro | Animal</FormTitle>
                     <Form action={document.location.origin.toString()+"/animal/add"} method="POST" className="row col-md-u justify-content-center">
                     <Input type="hidden" name="_token" value={props.token} />
                         <div className="col-sm-12 my-1">

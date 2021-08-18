@@ -7,9 +7,9 @@ const FormRequest = (props) => {
     return (
         <>
         <Right className="text-center row justify-content-center text-center text-white">
-                <FormTitle className="text-primary uppercase">nova Solicitação</FormTitle>
+                <FormTitle className="text-primary uppercase">Cadastro | Solicitação</FormTitle>
                     <Form action={document.location.origin.toString()+"/request/add"} method="POST" className="row col-md-u justify-content-center">
-                    <Input type="hidden" name="_token" value={props.token} />
+                    <Input type="hidden" name="_token" value={props.csrf_token} />
                         <div className="col-sm-12 my-1">
                             <label className="sr-only" for="label">Descrição</label>
                             <div className="input-group">
@@ -44,13 +44,13 @@ const FormRequest = (props) => {
                         <div className="form-group col-sm-12 my-1">
                             <h2>EXAMES</h2>
                                 {props.exams.map((exam) => (
-                                    <>
+                                    <div class="checkbox-field">
                                         <h3 className="text-left">{exam.label}</h3>
                                     <div className="checkbox-div">
                                     <Input type="checkbox" name="exams[]" id={"exam"+exam.id} value={exam.id} />
                                     <label for={"exam"+exam.id}></label>
                                     </div>
-                                    </>
+                                    </div>
                                 ))}
 
                         </div>
@@ -66,5 +66,5 @@ const FormRequest = (props) => {
 export default FormRequest;
 const form = document.getElementById('formRequests');
 if (form) {
-    ReactDOM.render(<FormRequest  token={csrf_token} exams={exams} animals={animals} />, form);
+    ReactDOM.render(<FormRequest csrf_token={csrf_token} animals={animals} exams={exams}/>, form);
 }

@@ -9,7 +9,7 @@ const Requests = (props) => {
             <div className="container row justify-content-center">
                 <h1 className="text-white text-uppercase ">Últimas Solicitações</h1>
                 <div className="container">
-                    <Table className="table table-dark table-striped">
+                    <Table className="table table-primary table-striped">
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -45,5 +45,5 @@ export default Requests;
 
 const div = document.getElementById('requests');
 if(div){
-    ReactDOM.render(<Requests requests={requests} />,div)
+    ReactDOM.render(<Requests requests={requests}/>,div)
 }

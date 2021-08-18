@@ -21,10 +21,11 @@
 @endif
 <div id="formRequests">
 </div>
+
 @push('scripts')
-<script type="text/javascript">
-    const animals = @json($animals);
-    const exams = @json($exams);
-</script>
+    <script>
+        const animals = @json($animals);
+        const exams = @json($exams);
+    </script>
 @endpush
 @endsection

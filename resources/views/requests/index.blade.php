@@ -4,10 +4,9 @@
 
     <div id="requests">
     </div>
-
     @push('scripts')
         <script>
-            const requests = @json($fullRequests);
+                const requests = @json($fullRequests);
         </script>
     @endpush
 @endsection

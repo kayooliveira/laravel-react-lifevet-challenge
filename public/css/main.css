@@ -2,8 +2,8 @@
 @import url('normalize.css');
 @import url('colors.css');
 body {
-    font-family: 'Roboto', Arial, Helvetica, sans-serif;
-    background: #424242 !important;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif !important;
+    background: #24688d !important;
     width: 100%;
     height: 100%;
     display: grid;
@@ -14,6 +14,11 @@ body {
 }
 input[type=checkbox] {
     visibility: hidden;
+  }
+  .checkbox-field{
+      display: inline-block;
+      min-width: 200px;
+      margin:10px;
   }
   .checkbox-div{
     width: 45px;
@@ -39,8 +44,9 @@ input[type=checkbox] {
   .checkbox-div input[type=checkbox]:checked + label {
     left: 27px;
   }
+
 .alert{
     position: absolute !important;
     top:10px !important;
-    right:10px !important;
+    right:50px !important;
 }
