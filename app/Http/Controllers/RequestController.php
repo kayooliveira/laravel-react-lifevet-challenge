@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Exam;
 use App\Models\Animal;
 use App\Http\Requests\CreateRequestRequest;
+use JavaScript;
 class RequestController extends Controller
 {
     /**
@@ -34,7 +35,7 @@ class RequestController extends Controller
             $requestData['exams'] = $examData;
             array_push($fullRequests,$requestData);
         }
-        return view('requests.index', compact('fullRequests'));
+        return view('requests.index',compact('fullRequests'));
     }
 
     /**
@@ -47,7 +48,7 @@ class RequestController extends Controller
         //
         $animals = Animal::all();
         $exams = Exam::all();
-        return view('requests.create',compact('animals', 'exams'));
+        return view('requests.create',compact('animals','exams'));
     }
 
     /**

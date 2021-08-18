@@ -2613,6 +2613,32 @@ __webpack_require__(/*! ./components/Forms/FormAnimal */ "./resources/js/compone
 
 __webpack_require__(/*! ./components/Index/Index */ "./resources/js/components/Index/Index.js");
 
+document.onkeydown = function (e) {
+  if (event.keyCode == 123) {
+    return false;
+  }
+
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+    return false;
+  }
+
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+    return false;
+  }
+
+  if (e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+    return false;
+  }
+
+  if (e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+    return false;
+  }
+};
+
+document.addEventListener('contextmenu', function (e) {
+  e.preventDefault();
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
@@ -2689,7 +2715,7 @@ var FormAnimal = function FormAnimal(props) {
       className: "text-center row justify-content-center text-center text-white",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.FormTitle, {
         className: "text-primary uppercase",
-        children: "Novo Animal"
+        children: "Cadastro | Animal"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Form, {
         action: document.location.origin.toString() + "/animal/add",
         method: "POST",
@@ -2848,7 +2874,7 @@ var FormRequest = function FormRequest(props) {
       className: "text-center row justify-content-center text-center text-white",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.FormTitle, {
         className: "text-primary uppercase",
-        children: "nova Solicita\xE7\xE3o"
+        children: "Cadastro | Solicita\xE7\xE3o"
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Form, {
         action: document.location.origin.toString() + "/request/add",
         method: "POST",
@@ -2856,7 +2882,7 @@ var FormRequest = function FormRequest(props) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Input, {
           type: "hidden",
           name: "_token",
-          value: props.token
+          value: props.csrf_token
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "col-sm-12 my-1",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
@@ -2930,7 +2956,8 @@ var FormRequest = function FormRequest(props) {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
             children: "EXAMES"
           }), props.exams.map(function (exam) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              "class": "checkbox-field",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
                 className: "text-left",
                 children: exam.label
@@ -2965,9 +2992,9 @@ var form = document.getElementById('formRequests');
 
 if (form) {
   react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(FormRequest, {
-    token: csrf_token,
-    exams: exams,
-    animals: animals
+    csrf_token: csrf_token,
+    animals: animals,
+    exams: exams
   }), form);
 }
 
@@ -2987,7 +3014,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var _styled_components_divs_GridAreas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styled-components/divs/GridAreas */ "./resources/js/components/styled-components/divs/GridAreas.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+var _templateObject, _templateObject2;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 
 
@@ -2995,15 +3026,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+var H1 = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.h1(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    text-transform:uppercase;\n    color: #8bf7ea;\n    text-align:center;\n    font-size:60px;\n    font-weight:bold\n"])));
+var H3 = styled_components__WEBPACK_IMPORTED_MODULE_4__.default.h3(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    text-align:center;\n    color: white;\n    &#subtitle{\n        text-transform:uppercase;\n    }\n"])));
 
 var Index = function Index() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h1", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_styled_components_divs_GridAreas__WEBPACK_IMPORTED_MODULE_2__.Right, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(H1, {
       children: "RANDOM VET"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
-      children: "Gerenciamento de Solicita\xE7\xF5es para Veterin\xE1ria"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
-      children: ["Sistema desenvolvido para o cumprimento do desafio ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(H3, {
+      id: "subtitle",
+      children: "Visualica\xE7\xE3o e Cria\xE7\xE3o de Solicita\xE7\xF5es para Veterin\xE1ria"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("hr", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(H3, {
+      children: ["Desenvolvido para o cumprimento do ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
         target: "_blank",
         href: "https://github.com/sergiopallet/code-challenge-lifevet",
         children: "code-challenge-lifevet"
@@ -3051,20 +3085,23 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 var SidebarBrand = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.img(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nmargin-top:10px;\npadding:12px;\nwidth: 100%;\n"])));
-var Sidebar = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.nav(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nmargin:0;\ngrid-area:left;\nwidth:100%;\ntext-align: center;\nbackground-color: #252525;\nmin-height:100vh;\nheight:100%;\noverflow:hidden;\n"])));
+var Sidebar = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.nav(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nmargin:0;\ngrid-area:left;\nwidth:100%;\ntext-align: center;\nbackground-color: #2b93ec ;\nmin-height:100vh;\nheight:100%;\noverflow:hidden;\n"])));
 var SidebarList = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.ul(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\nmargin:0;\nwidth:100%;\npadding:0;\nlist-style: none;\n"])));
-var SidebarListItemLink = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.a(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\ntext-transform: uppercase;\ntext-align: center;\ntransition: .2s;\ndisplay: block;\nwidth: 100%;\nmargin: 10px 0 10px 0;\npadding:30px 0 30px 0;\nborder-bottom: 1px solid;\nborder-color:#2b93ec;\ncolor: white;\n\n&:hover{\n    position: relative;\n    transform:scale(1.05);\n    background-color: rgb(10, 8, 30);\n    color: white;\n    text-decoration: none;\n    font-weight: bold;\n}\n"])));
+var SidebarListItemLink = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.a(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\ntext-transform: uppercase;\ntext-align: center;\ntransition: .2s;\ndisplay: block;\nwidth: 100%;\nmargin: 10px 0 10px 0;\npadding:30px 0 30px 0;\nborder-bottom: 1px solid;\nborder-color:#8bf7ea;\ncolor: #8bf7ea;\n\n&:hover{\n    position: relative;\n    transform:scale(1.05);\n    background-color: rgb(10, 8, 30);\n    color: white;\n    text-decoration: none;\n    font-weight: bold;\n}\n"])));
 var Version = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.div(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\nright:20px;\n\n&>p{\n    text-align:right;\n    color: #2b93ec\n}\n"])));
 
 var Nav = function Nav() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(Sidebar, {
       className: "sidebar",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SidebarBrand, {
-        src: window.location.origin.toString() + "/img/teste.png",
-        alt: "logo",
-        title: "Logo",
-        className: "sidebar-brand"
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
+        href: window.location.origin.toString() + "/",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(SidebarBrand, {
+          src: window.location.origin.toString() + "/img/teste.png",
+          alt: "logo",
+          title: "Logo",
+          className: "sidebar-brand"
+        })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(SidebarList, {
         className: "sidebar-list",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
@@ -3144,7 +3181,7 @@ var Requests = function Requests(props) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "container",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_tables_Table__WEBPACK_IMPORTED_MODULE_2__.default, {
-          className: "table table-dark table-striped",
+          className: "table table-primary table-striped",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
@@ -3226,7 +3263,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 
 
-var Right = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ngrid-area:right;\nwidth:100%;\ntext-align:center;\nheight:100% !important;\noverflow:hidden;\n"])));
+var Right = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\ngrid-area:right;\nwidth:100%;\ntext-align:center;\nheight:100% !important;\noverflow:hidden;\npadding:50px;\n"])));
 var Left = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\ngrid-area:left;\nwidth:100%;\ntext-align:center;\nheight:100% !important;\noverflow:hidden;\n"])));
 
 
@@ -3258,9 +3295,9 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 var Select = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.select(_templateObject || (_templateObject = _taggedTemplateLiteral(["\nbackground-color:transparent;\nborder: 0;\nborder-bottom: 1px solid #2b93ec;\ncolor: #fff;\nheight:50px;\n\n&:hover{\n    background-color:transparent;\n    border: 0;\n    border-bottom: 1px solid #2b93ec;\n    color: #fff;\n}\n\n&:focus{\n    background-color:transparent;\n    border: 0;\n    border-bottom: 1px solid #2b93ec;\n    color: #fff;\n\n}\n&>option{\n    color: black;\n}\n"])));
 var TextArea = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.textarea(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\nbackground:transparent !important;\nborder:0px !important;\nborder-bottom: 1px solid #2b93ec !important;\ncolor:white !important;\n"])));
-var FormTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    color:white;\n    font-size:50px;\n    font-weight:bold;\n    text-align:center;\n    text-transform: uppercase;\n"])));
+var FormTitle = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.h1(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    color:white !important;\n    font-size:50px;\n    font-weight:bold;\n    text-align:center;\n    text-transform: uppercase;\n"])));
 var Form = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.form(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\nborder-radius: 15px;\npadding:20px;\nmargin:0;"])));
-var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.input(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\nbackground:transparent !important;\nheight:50px !important;\n"])));
+var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.input(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\nbackground:transparent !important;\nheight:50px !important;\ncolor:white !important;\n"])));
 var Label = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.label(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral([""])));
 
 

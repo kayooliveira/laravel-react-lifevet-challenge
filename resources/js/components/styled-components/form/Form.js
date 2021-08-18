@@ -34,7 +34,7 @@ color:white !important;
 `
 
 const FormTitle = styled.h1`
-    color:white;
+    color:white !important;
     font-size:50px;
     font-weight:bold;
     text-align:center;
@@ -48,6 +48,7 @@ margin:0;`
 const Input = styled.input`
 background:transparent !important;
 height:50px !important;
+color:white !important;
 `
 
 const Label = styled.label``

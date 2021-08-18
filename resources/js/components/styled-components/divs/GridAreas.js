@@ -8,6 +8,7 @@ width:100%;
 text-align:center;
 height:100% !important;
 overflow:hidden;
+padding:50px;
 `
 
 const Left = styled.div`
