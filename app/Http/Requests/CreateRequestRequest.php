@@ -25,7 +25,7 @@ class CreateRequestRequest extends FormRequest
     {
         return [
             //
-            'label' => ['required','unique:requests,label,animal_id'],
+            'label' => ['required','unique:requests,label,animal_id','max:50'],
             'animal' => ['numeric','exists:animals,id'],
             'exams' => ['required']
 
@@ -36,6 +36,7 @@ class CreateRequestRequest extends FormRequest
         return [
             'label.required' => 'O campo Descrição é requerido!',
             'label.unique' => 'Já existe uma solicitação para este animal com estas informações',
+            'label.max' => 'Máximo de 50 caracteres aceitados para a descrição!',
             'animal.exists' => 'O animal não existe no banco de dados!'
         ];
     }

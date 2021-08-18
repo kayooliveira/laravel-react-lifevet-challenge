@@ -16,7 +16,7 @@ const FormRequest = (props) => {
                                 <div className="input-group-prepend">
                                 <div className="input-group-text bg-primary text-white">Descrição</div>
                                 </div>
-                                <TextArea required name="label" className="form-control" id="label" placeholder="Descrição" rows="3" ></TextArea>
+                                <TextArea required name="label" className="form-control" id="label" placeholder="Descrição" maxLength="50" rows="3" ></TextArea>
                             </div>
                         </div>
                         <div className="form-group col-sm-12 my-1">

@@ -37,6 +37,11 @@
 
 <hr>
 
+<h3>Seed the DB (exams table) with</h3>
+<code>php artisan db:seed</code>
+
+<hr>
+
 ## START THE APPLICATION
 
 <code>php artisan serve</code>
