@@ -5,10 +5,10 @@ import {Right} from '../styled-components/divs/GridAreas';
 
 const FormRequest = (props) => {
     return (
-        <>
-        <Right className="text-center row justify-content-center text-center text-white">
-                <FormTitle className="text-primary uppercase">Cadastro | Solicitação</FormTitle>
+        <Right>
+            <div className="text-center row justify-content-center text-center text-white">
                     <Form action={document.location.origin.toString()+"/request/add"} method="POST" className="row col-md-u justify-content-center">
+                <FormTitle className="text-primary uppercase">Cadastro | Solicitação</FormTitle>
                     <Input type="hidden" name="_token" value={props.csrf_token} />
                         <div className="col-sm-12 my-1">
                             <label className="sr-only" for="label">Descrição</label>
@@ -58,8 +58,8 @@ const FormRequest = (props) => {
                         <button className="btn btn-success" type="submit">Cadastrar</button>
                         </div>
                         </Form>
+                        </div>
                 </Right>
-                </>
     );
 }
 

@@ -5,10 +5,10 @@ import {Right} from '../styled-components/divs/GridAreas';
 
 const FormAnimal = (props) => {
     return (
-        <>
-        <Right className="text-center row justify-content-center text-center text-white">
-                <FormTitle className="text-primary uppercase">Cadastro | Animal</FormTitle>
+        <Right>
+            <div className="text-center row justify-content-center text-center text-white">
                     <Form action={document.location.origin.toString()+"/animal/add"} method="POST" className="row col-md-u justify-content-center">
+                <FormTitle className="text-primary uppercase">Cadastro | Animal</FormTitle>
                     <Input type="hidden" name="_token" value={props.token} />
                         <div className="col-sm-12 my-1">
                             <label className="sr-only" for="label">Identificação do Animal</label>
@@ -50,8 +50,8 @@ const FormAnimal = (props) => {
                         <button className="btn btn-success" type="submit">Cadastrar</button>
                         </div>
                         </Form>
+                        </div>
                 </Right>
-                </>
     );
 }
 

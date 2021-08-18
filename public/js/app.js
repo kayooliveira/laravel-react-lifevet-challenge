@@ -2708,19 +2708,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var FormAnimal = function FormAnimal(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_divs_GridAreas__WEBPACK_IMPORTED_MODULE_3__.Right, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_divs_GridAreas__WEBPACK_IMPORTED_MODULE_3__.Right, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "text-center row justify-content-center text-center text-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.FormTitle, {
-        className: "text-primary uppercase",
-        children: "Cadastro | Animal"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Form, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Form, {
         action: document.location.origin.toString() + "/animal/add",
         method: "POST",
         className: "row col-md-u justify-content-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Input, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.FormTitle, {
+          className: "text-primary uppercase",
+          children: "Cadastro | Animal"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Input, {
           type: "hidden",
           name: "_token",
           value: props.token
@@ -2828,7 +2827,7 @@ var FormAnimal = function FormAnimal(props) {
             children: "Cadastrar"
           })
         })]
-      })]
+      })
     })
   });
 };
@@ -2867,19 +2866,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var FormRequest = function FormRequest(props) {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_divs_GridAreas__WEBPACK_IMPORTED_MODULE_3__.Right, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_divs_GridAreas__WEBPACK_IMPORTED_MODULE_3__.Right, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
       className: "text-center row justify-content-center text-center text-white",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.FormTitle, {
-        className: "text-primary uppercase",
-        children: "Cadastro | Solicita\xE7\xE3o"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Form, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Form, {
         action: document.location.origin.toString() + "/request/add",
         method: "POST",
         className: "row col-md-u justify-content-center",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Input, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.FormTitle, {
+          className: "text-primary uppercase",
+          children: "Cadastro | Solicita\xE7\xE3o"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_styled_components_form_Form__WEBPACK_IMPORTED_MODULE_2__.Input, {
           type: "hidden",
           name: "_token",
           value: props.csrf_token
@@ -2903,6 +2901,7 @@ var FormRequest = function FormRequest(props) {
               className: "form-control",
               id: "label",
               placeholder: "Descri\xE7\xE3o",
+              maxLength: "50",
               rows: "3"
             })]
           })]
@@ -2982,7 +2981,7 @@ var FormRequest = function FormRequest(props) {
             children: "Cadastrar"
           })
         })]
-      })]
+      })
     })
   });
 };
